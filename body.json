@@ -1,0 +1,11 @@
+{
+
+  "firstName": "Ragini",
+  "lastName": "Ramdan",
+  "age": 30,
+  "email": "teees@test.com",
+  "courses": [
+    "Automation",
+    "Python"
+  ]
+}

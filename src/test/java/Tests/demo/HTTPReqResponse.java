@@ -1,10 +1,15 @@
 package Tests.demo;
 
 
+import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import java.util.*;
+
+import static javax.swing.UIManager.getInt;
 import static org.hamcrest.Matchers.equalTo;
 import static io.restassured.RestAssured.*;
+import static org.testng.AssertJUnit.assertEquals;
+
 import java.net.URL;
 
 
@@ -46,14 +51,34 @@ public class HTTPReqResponse {
         hm.put("name","vishnu");
         hm.put("job","teacher");
 
-       given()
+   /*    given()
                .contentType("application/json")
                .body(hm)
                .when()
                      .put("https://reqres.in/api/users"+id)
                .then()
                    .statusCode(200)
-                     .log().all();
+                     .body("name", equalTo("vishnu"))
+                      .body("job", equalTo("teacher"));  */
+
+        Response response = given()
+                .contentType("application/json")
+                .body(hm)
+                .when()
+                .put("https://reqres.in/api/users/" + id);
+
+        // Assert status code and check the response body directly
+        response.then()
+                .statusCode(200)
+                .body("name", equalTo("vishnu"))
+                .body("job", equalTo("teacher"));
+
+        // Extract id from the response using jsonPath()
+        int updatedUserId = response.jsonPath().getInt("id");
+
+        // Ensure that the user ID remains unchanged after the update
+        assertEquals(String.valueOf(updatedUserId), id, "User ID should be unchanged after update");
+
 
 
     }
