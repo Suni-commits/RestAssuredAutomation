@@ -1,0 +1,89 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome7",
+    "definitions": {
+        "Welcome7": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "contact": {
+                    "$ref": "#/definitions/Contact"
+                },
+                "books": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Book"
+                    }
+                }
+            },
+            "required": [
+                "books",
+                "contact",
+                "location",
+                "name"
+            ],
+            "title": "Welcome7"
+        },
+        "Book": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "author": {
+                    "type": "string"
+                },
+                "price": {
+                    "type": "number"
+                },
+                "currency": {
+                    "type": "string"
+                },
+                "isbn": {
+                    "type": "string"
+                },
+                "category": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "author",
+                "category",
+                "currency",
+                "id",
+                "isbn",
+                "price",
+                "title"
+            ],
+            "title": "Book"
+        },
+        "Contact": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "phone": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "email",
+                "phone"
+            ],
+            "title": "Contact"
+        }
+    }
+}
