@@ -1,5 +1,6 @@
 package APITESTING;
 
+import io.qameta.allure.Description;
 import org.testng.annotations.Test;
 import java.util.*;
 
@@ -7,7 +8,10 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
 public class CreateRequestFirstexample {
+
     //Creating request using "Hashmap"
+
+    @Description("Verify the creation of user using Hashmap")
     @Test
     void createUser1()
     {

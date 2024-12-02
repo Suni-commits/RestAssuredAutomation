@@ -1,5 +1,6 @@
 package APITESTING;
 
+import io.qameta.allure.Description;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 import org.testng.annotations.Test;
@@ -12,6 +13,7 @@ import static org.hamcrest.Matchers.equalTo;
 public class CreateRequest4thExample {
 
     // create request using external json file
+    @Description("Verify the new user is creating by using post method")
     @Test(priority = 1)
 void createUser4() throws FileNotFoundException {
     File f=new File(".//body.json");

@@ -2,73 +2,48 @@
 <testng-results ignored="0" total="8" passed="7" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-11-25T11:44:00 IST" name="Default Suite" finished-at="2024-11-25T11:45:22 IST" duration-ms="82323">
+  <suite started-at="2024-11-29T19:30:20 IST" name="Default Suite" finished-at="2024-11-29T19:30:34 IST" duration-ms="13262">
     <groups>
     </groups>
-    <test started-at="2024-11-25T11:44:00 IST" name="RestAssuredAutomation" finished-at="2024-11-25T11:45:22 IST" duration-ms="82323">
+    <test started-at="2024-11-29T19:30:20 IST" name="RestAssuredAutomation" finished-at="2024-11-29T19:30:34 IST" duration-ms="13262">
       <class name="Tests.demo.CreateUserRequest">
-        <test-method signature="createUser()[pri:0, instance:Tests.demo.CreateUserRequest@6f19ac19]" started-at="2024-11-25T11:45:22 IST" name="createUser" finished-at="2024-11-25T11:45:22 IST" duration-ms="797" status="PASS">
+        <test-method signature="createUser()[pri:0, instance:Tests.demo.CreateUserRequest@698122b2]" started-at="2024-11-29T19:30:33 IST" name="createUser" finished-at="2024-11-29T19:30:33 IST" duration-ms="514" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createUser -->
       </class> <!-- Tests.demo.CreateUserRequest -->
       <class name="Tests.demo.TestExample">
-        <test-method signature="test_1()[pri:0, instance:Tests.demo.TestExample@1bd39d3c]" started-at="2024-11-25T11:45:19 IST" name="test_1" finished-at="2024-11-25T11:45:20 IST" duration-ms="892" status="PASS">
+        <test-method signature="test_1()[pri:0, instance:Tests.demo.TestExample@3542162a]" started-at="2024-11-29T19:30:32 IST" name="test_1" finished-at="2024-11-29T19:30:32 IST" duration-ms="123" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_1 -->
-        <test-method signature="test_2()[pri:0, instance:Tests.demo.TestExample@1bd39d3c]" started-at="2024-11-25T11:45:20 IST" name="test_2" finished-at="2024-11-25T11:45:20 IST" duration-ms="510" status="PASS">
+        <test-method signature="test_2()[pri:0, instance:Tests.demo.TestExample@3542162a]" started-at="2024-11-29T19:30:32 IST" name="test_2" finished-at="2024-11-29T19:30:33 IST" duration-ms="118" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_2 -->
-        <test-method signature="test_3()[pri:0, instance:Tests.demo.TestExample@1bd39d3c]" started-at="2024-11-25T11:45:20 IST" name="test_3" finished-at="2024-11-25T11:45:22 IST" duration-ms="1281" status="PASS">
+        <test-method signature="test_3()[pri:0, instance:Tests.demo.TestExample@3542162a]" started-at="2024-11-29T19:30:33 IST" name="test_3" finished-at="2024-11-29T19:30:33 IST" duration-ms="157" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_3 -->
       </class> <!-- Tests.demo.TestExample -->
       <class name="Tests.demo.HTTPReqResponse">
-        <test-method signature="getUser()[pri:1, instance:Tests.demo.HTTPReqResponse@609db546]" started-at="2024-11-25T11:44:01 IST" name="getUser" finished-at="2024-11-25T11:45:03 IST" duration-ms="61644" status="PASS">
+        <test-method signature="getUser()[pri:1, instance:Tests.demo.HTTPReqResponse@45905bff]" started-at="2024-11-29T19:30:20 IST" name="getUser" finished-at="2024-11-29T19:30:29 IST" duration-ms="8349" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getUser -->
-        <test-method signature="createUsers()[pri:2, instance:Tests.demo.HTTPReqResponse@609db546]" started-at="2024-11-25T11:45:03 IST" name="createUsers" finished-at="2024-11-25T11:45:12 IST" duration-ms="9140" status="PASS">
+        <test-method signature="createUsers()[pri:2, instance:Tests.demo.HTTPReqResponse@45905bff]" started-at="2024-11-29T19:30:29 IST" name="createUsers" finished-at="2024-11-29T19:30:31 IST" duration-ms="2065" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createUsers -->
-        <test-method signature="updateUser()[pri:3, instance:Tests.demo.HTTPReqResponse@609db546]" started-at="2024-11-25T11:45:12 IST" name="updateUser" finished-at="2024-11-25T11:45:17 IST" depends-on-methods="Tests.demo.HTTPReqResponse.createUsers" duration-ms="5452" status="FAIL">
-          <exception class="java.lang.AssertionError">
+        <test-method signature="updateUser()[pri:3, instance:Tests.demo.HTTPReqResponse@45905bff]" started-at="2024-11-29T19:30:31 IST" name="updateUser" finished-at="2024-11-29T19:30:32 IST" depends-on-methods="Tests.demo.HTTPReqResponse.createUsers" duration-ms="748" status="FAIL">
+          <exception class="java.lang.NullPointerException">
             <message>
-              <![CDATA[1 expectation failed.
-Expected status code <200> but was <404>.
-]]>
+              <![CDATA[Cannot invoke "java.lang.Integer.intValue()" because the return value of "io.restassured.internal.common.path.ObjectConverter.convertObjectTo(Object, java.lang.Class)" is null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: 1 expectation failed.
-Expected status code <200> but was <404>.
-
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
-at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
-at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
-at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
-at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
-at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
-at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
-at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
-at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
-at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
-at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)
-at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
-at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
-at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
-at Tests.demo.HTTPReqResponse.updateUser(HTTPReqResponse.java:55)
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "io.restassured.internal.common.path.ObjectConverter.convertObjectTo(Object, java.lang.Class)" is null
+at io.restassured.path.json.JsonPath.getInt(JsonPath.java:245)
+at Tests.demo.HTTPReqResponse.updateUser(HTTPReqResponse.java:77)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -96,11 +71,11 @@ at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
 at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- updateUser -->
-        <test-method signature="deleteUser()[pri:4, instance:Tests.demo.HTTPReqResponse@609db546]" started-at="2024-11-25T11:45:18 IST" name="deleteUser" finished-at="2024-11-25T11:45:19 IST" duration-ms="1171" status="PASS">
+        <test-method signature="deleteUser()[pri:4, instance:Tests.demo.HTTPReqResponse@45905bff]" started-at="2024-11-29T19:30:32 IST" name="deleteUser" finished-at="2024-11-29T19:30:32 IST" duration-ms="505" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteUser -->
