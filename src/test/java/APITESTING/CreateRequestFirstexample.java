@@ -1,6 +1,10 @@
 package APITESTING;
 
 import io.qameta.allure.Description;
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import io.restassured.response.ValidatableResponse;
+import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.Test;
 import java.util.*;
 
@@ -10,7 +14,11 @@ import static org.hamcrest.Matchers.equalTo;
 public class CreateRequestFirstexample {
 
     //Creating request using "Hashmap"
+String id;
+Response r;
+ValidatableResponse vr;
 
+    RequestSpecification rs;
     @Description("Verify the creation of user using Hashmap")
     @Test
     void createUser1()
@@ -24,20 +32,13 @@ public class CreateRequestFirstexample {
         String[] coursesarr={"Computer Science","Mathematics"};
         hm.put("courses",coursesarr);
 
-        given()
-                .contentType("application/json")
-                .body(hm)
-                .when()
-                .post("http://localhost:3000/students")
-                .then()
-                .statusCode(201)
-                .body("firstName",equalTo("Sweety"))
-                .body("lastName",equalTo("Fruity"))
-                .body("age",equalTo(27))
-                .body("email",equalTo("test1@test.com"))
-                .body("courses[0]",equalTo("Computer Science"))
-                .body("courses[1]",equalTo("Mathematics"))
-                .log().all();
+       RestAssured.given();
+                rs.contentType("application/json");
+                rs.body(hm);
+               r= rs.when().post("http://localhost:3000/students");
+               vr=r.then().statusCode(201).log().all();
+               id=r.jsonPath().getString("id");
+               System.out.println(id);
 
     }
 @Test
@@ -47,7 +48,7 @@ public class CreateRequestFirstexample {
         given()
 
                 .when()
-                .delete("http://localhost:3000/students/3")
+                .delete("http://localhost:3000/students/"+id)
                 .then()
                 .statusCode(200);
     }

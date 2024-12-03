@@ -2,40 +2,40 @@
 <testng-results ignored="0" total="8" passed="7" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-11-29T19:30:20 IST" name="Default Suite" finished-at="2024-11-29T19:30:34 IST" duration-ms="13262">
+  <suite started-at="2024-12-03T12:34:08 IST" name="Default Suite" finished-at="2024-12-03T12:34:19 IST" duration-ms="11566">
     <groups>
     </groups>
-    <test started-at="2024-11-29T19:30:20 IST" name="RestAssuredAutomation" finished-at="2024-11-29T19:30:34 IST" duration-ms="13262">
+    <test started-at="2024-12-03T12:34:08 IST" name="RestAssuredAutomation" finished-at="2024-12-03T12:34:19 IST" duration-ms="11566">
       <class name="Tests.demo.CreateUserRequest">
-        <test-method signature="createUser()[pri:0, instance:Tests.demo.CreateUserRequest@698122b2]" started-at="2024-11-29T19:30:33 IST" name="createUser" finished-at="2024-11-29T19:30:33 IST" duration-ms="514" status="PASS">
+        <test-method signature="createUser()[pri:0, instance:Tests.demo.CreateUserRequest@698122b2]" started-at="2024-12-03T12:34:19 IST" name="createUser" finished-at="2024-12-03T12:34:19 IST" duration-ms="533" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createUser -->
       </class> <!-- Tests.demo.CreateUserRequest -->
       <class name="Tests.demo.TestExample">
-        <test-method signature="test_1()[pri:0, instance:Tests.demo.TestExample@3542162a]" started-at="2024-11-29T19:30:32 IST" name="test_1" finished-at="2024-11-29T19:30:32 IST" duration-ms="123" status="PASS">
+        <test-method signature="test_1()[pri:0, instance:Tests.demo.TestExample@3542162a]" started-at="2024-12-03T12:34:19 IST" name="test_1" finished-at="2024-12-03T12:34:19 IST" duration-ms="97" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_1 -->
-        <test-method signature="test_2()[pri:0, instance:Tests.demo.TestExample@3542162a]" started-at="2024-11-29T19:30:32 IST" name="test_2" finished-at="2024-11-29T19:30:33 IST" duration-ms="118" status="PASS">
+        <test-method signature="test_2()[pri:0, instance:Tests.demo.TestExample@3542162a]" started-at="2024-12-03T12:34:19 IST" name="test_2" finished-at="2024-12-03T12:34:19 IST" duration-ms="109" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_2 -->
-        <test-method signature="test_3()[pri:0, instance:Tests.demo.TestExample@3542162a]" started-at="2024-11-29T19:30:33 IST" name="test_3" finished-at="2024-11-29T19:30:33 IST" duration-ms="157" status="PASS">
+        <test-method signature="test_3()[pri:0, instance:Tests.demo.TestExample@3542162a]" started-at="2024-12-03T12:34:19 IST" name="test_3" finished-at="2024-12-03T12:34:19 IST" duration-ms="157" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_3 -->
       </class> <!-- Tests.demo.TestExample -->
       <class name="Tests.demo.HTTPReqResponse">
-        <test-method signature="getUser()[pri:1, instance:Tests.demo.HTTPReqResponse@45905bff]" started-at="2024-11-29T19:30:20 IST" name="getUser" finished-at="2024-11-29T19:30:29 IST" duration-ms="8349" status="PASS">
+        <test-method signature="getUser()[pri:1, instance:Tests.demo.HTTPReqResponse@45905bff]" started-at="2024-12-03T12:34:08 IST" name="getUser" finished-at="2024-12-03T12:34:16 IST" duration-ms="7629" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getUser -->
-        <test-method signature="createUsers()[pri:2, instance:Tests.demo.HTTPReqResponse@45905bff]" started-at="2024-11-29T19:30:29 IST" name="createUsers" finished-at="2024-11-29T19:30:31 IST" duration-ms="2065" status="PASS">
+        <test-method signature="createUsers()[pri:2, instance:Tests.demo.HTTPReqResponse@45905bff]" started-at="2024-12-03T12:34:16 IST" name="createUsers" finished-at="2024-12-03T12:34:17 IST" duration-ms="1547" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createUsers -->
-        <test-method signature="updateUser()[pri:3, instance:Tests.demo.HTTPReqResponse@45905bff]" started-at="2024-11-29T19:30:31 IST" name="updateUser" finished-at="2024-11-29T19:30:32 IST" depends-on-methods="Tests.demo.HTTPReqResponse.createUsers" duration-ms="748" status="FAIL">
+        <test-method signature="updateUser()[pri:3, instance:Tests.demo.HTTPReqResponse@45905bff]" started-at="2024-12-03T12:34:17 IST" name="updateUser" finished-at="2024-12-03T12:34:18 IST" depends-on-methods="Tests.demo.HTTPReqResponse.createUsers" duration-ms="676" status="FAIL">
           <exception class="java.lang.NullPointerException">
             <message>
               <![CDATA[Cannot invoke "java.lang.Integer.intValue()" because the return value of "io.restassured.internal.common.path.ObjectConverter.convertObjectTo(Object, java.lang.Class)" is null]]>
@@ -75,7 +75,7 @@ at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- updateUser -->
-        <test-method signature="deleteUser()[pri:4, instance:Tests.demo.HTTPReqResponse@45905bff]" started-at="2024-11-29T19:30:32 IST" name="deleteUser" finished-at="2024-11-29T19:30:32 IST" duration-ms="505" status="PASS">
+        <test-method signature="deleteUser()[pri:4, instance:Tests.demo.HTTPReqResponse@45905bff]" started-at="2024-12-03T12:34:18 IST" name="deleteUser" finished-at="2024-12-03T12:34:19 IST" duration-ms="476" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteUser -->
