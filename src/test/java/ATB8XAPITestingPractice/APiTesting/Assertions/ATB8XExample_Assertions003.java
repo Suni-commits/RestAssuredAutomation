@@ -8,6 +8,7 @@ import io.restassured.specification.RequestSpecification;
 import org.hamcrest.Matchers;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -20,8 +21,9 @@ public class ATB8XExample_Assertions003 {
     String bookingId;
     String tokenId;
 
-    @BeforeClass
-    void setUp(){
+    @BeforeTest
+    public void setUp(){
+
         String bookingId=getBookingId();
         String tokenId=getTokenId();
     }
@@ -48,7 +50,7 @@ public class ATB8XExample_Assertions003 {
         return bookingId;
     }
 
-    public String getTokenId() {
+    public  String getTokenId() {
         String payload="{\n" +
                 "    \"username\" : \"admin\",\n" +
                 "    \"password\" : \"password123\"\n" +
