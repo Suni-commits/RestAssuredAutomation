@@ -7,8 +7,6 @@ import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import org.hamcrest.Matchers;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -21,14 +19,8 @@ public class ATB8XExample_Assertions003 {
     String bookingId;
     String tokenId;
 
-    @BeforeTest
-    public void setUp(){
-
-        String bookingId=getBookingId();
-        String tokenId=getTokenId();
-    }
-
     public String getBookingId() {
+
         String payload="{\n" +
                 "    \"firstname\" : \"James\",\n" +
                 "    \"lastname\" : \"Carlon\",\n" +
@@ -67,6 +59,7 @@ public class ATB8XExample_Assertions003 {
    @Description("TC_01 : verifying token id creation" )
     @Test(priority = 1)
    void test_createTokenid(){
+        tokenId=getTokenId();
         System.out.println(tokenId);
 
         //assertion using Assert J
@@ -77,6 +70,7 @@ public class ATB8XExample_Assertions003 {
    @Description("TC_02: verifying creation of booking id ")
    @Test(priority = 2)
    void test_createBookingId(){
+        bookingId=getBookingId();
         System.out.println(bookingId);
 
         // Assertions
@@ -87,7 +81,8 @@ public class ATB8XExample_Assertions003 {
   @Description("TC_03 : Update booking details")
 @Test(priority =3)
    void test_updatebookingid() {
-
+      bookingId=getBookingId();
+      tokenId=getTokenId();
            String payload = "{\n" +
                    "    \"firstname\" : \"Ronald\",\n" +
                    "    \"lastname\" : \"Ross\",\n" +
@@ -113,7 +108,6 @@ public class ATB8XExample_Assertions003 {
       String checkin=r.jsonPath().getString("bookingdates.checkin");
       String checkout=r.jsonPath().getString("bookingdates.checkout");
 
-
       //Assert J
 
       assertThat(firstname).isEqualTo("Ronald").isNotNull().isNotNull();
@@ -122,8 +116,6 @@ public class ATB8XExample_Assertions003 {
       assertThat(totalprice).isEqualTo(1221).isNotNull().isPositive();
       assertThat(checkin).isNotNull().isNotEmpty();
       assertThat(checkout).isNotNull().isNotEmpty();
-
-
 
       // Perform assertions to verify the updated details
       Assert.assertEquals(firstname, "Ronald");
@@ -144,10 +136,13 @@ void test_getUpdatedBookingdetails(){
         r = Rs.when().get("https://restful-booker.herokuapp.com/booking/" + bookingId);
         Vr = r.then().statusCode(200).log().all();
 
-
+        String firstname=r.jsonPath().getString("firstname");
+        String lastname=r.jsonPath().getString("lastname");
+        String totalprice=r.jsonPath().getString("totalprice");
         boolean depositPaid=r.then().extract().equals("depositPaid");
 
 
+       // validatable responses
         Vr.body("firstname",Matchers.equalTo("Ronald"));
         Vr.body("lastname",Matchers.equalTo("Ross"));
         Vr.body("totalprice",Matchers.equalTo(1221));
@@ -155,13 +150,17 @@ void test_getUpdatedBookingdetails(){
             // assert j
 
         assertThat(depositPaid).isNotNull();
+        assertThat(firstname).isNotNull().isAlphabetic().isNotEmpty();
+        assertThat(lastname).isNotNull().isAlphabetic().isNotEmpty();
+        assertThat(totalprice).isNotNull().isNotEmpty();
 
-
-}
+    }
 
 @Description("TC_05: Verifying booking details  are deleted successfully")
 @Test(priority=5)
 void test_deletebookingdetails(){
+    bookingId=getBookingId();
+    tokenId=getTokenId();
     Rs = RestAssured.given();
     Rs.contentType("application/json");
     Rs.cookie("token",tokenId);
