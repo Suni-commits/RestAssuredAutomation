@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.hamcrest.Matchers.*;
 
 public class Example001 {
@@ -71,8 +72,15 @@ public void testPagination() {
             .get("/products");
            vr=r.then()
             .statusCode(200)
-            .body("size()", equalTo(10)); // Expecting 10 products in the response
-}
+            .body("size()", equalTo(10));// Expecting 10 products in the response
+String size=r.jsonPath().getString("size");
+
+    // Assert J- assertions
+        assertThat(size).isNotBlank().isNotEmpty();
+
+
+
+    }
 
     @Description("TC_05: Verify response format is JSON")
     @Test
