@@ -4,7 +4,9 @@
     <test verbose="2" preserve-order="true" name="C:/Users/Mohanshiva/Documents/New folder/RestAssuredAutomation/testng.xml">
         <groups>
             <run>
-                <include name="QA"/>
+                <include name="qa"/>
+                <include name="sanity"/>
+                <exclude name="preprod" />
             </run>
         </groups>
         <classes>

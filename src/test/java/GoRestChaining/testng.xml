@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+    <test name="Test1">
+        <classes>
+            <class name="GoRestChaining.CreateUserExample"/>
+        </classes>
+    </test>
+    <test  name="Test2">
+        <classes>
+            <class name="GoRestChaining.GetUserExample" />
+        </classes>
+    </test>
+    <test  name="Test3">
+        <classes>
+            <class name="GoRestChaining.UpdateUserExample"/>
+        </classes>
+    </test>
+    <test name="Test4">
+        <classes>
+            <class name="GoRestChaining.DeleteUserExample"/>
+        </classes>
+    </test>
+</suite>
