@@ -108,6 +108,13 @@
         <artifactId>javafaker</artifactId>
         <version>1.0.2</version>
     </dependency>
+    <dependency>
+        <groupId>com.aventstack</groupId>
+        <artifactId>extentreports</artifactId>
+        <version>5.0.9</version> <!-- Use the version you need -->
+        <scope>test</scope>
+    </dependency>
+
 
 </dependencies>
 </project>
