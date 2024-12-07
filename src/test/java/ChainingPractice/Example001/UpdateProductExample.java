@@ -1,4 +1,4 @@
-package ChainingPractice;
+package ChainingPractice.Example001;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
