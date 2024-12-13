@@ -18,7 +18,7 @@ public class APIExamplenonBddStyleget {
          r.then().statusCode(200).log().body();
 
     }
-    @Description("TC_02-Verify the pin code with valid data")
+    @Description("TC_02-Verify the pin code with invalid data")
     @Test
     void getpincode_nonbddstyle_negative()
     {

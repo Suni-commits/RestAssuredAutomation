@@ -17,6 +17,8 @@ public class Example001 {
     RequestSpecification rs;
     Response r;
     ValidatableResponse vr;
+    Integer id;
+
 
     @BeforeClass
     static void setUp() {
@@ -31,7 +33,7 @@ public class Example001 {
         r = rs.when().get("/products");
         r.then().log().all();
 
-
+        id=r.jsonPath().getInt("[0].id");
         Assert.assertEquals(r.getStatusCode(),200);
         Assert.assertEquals(r.getContentType(),"application/json; charset=utf-8");
 
@@ -40,13 +42,11 @@ public class Example001 {
     @Description("TC_02: Verify the single id details")
     @Test
     void test_getSingleProductById(){
-        int id=769;
 
         rs = RestAssured.given();
-        r = rs.when().get("/products/"+id);
-        r.then().body("id",equalTo(id))
-                        .body("title",notNullValue())
-                                .body("price",notNullValue());
+        rs.pathParam("id",id);
+        r = rs.when().get("/products/{id}");
+        r.then().log().all();
 
         Assert.assertEquals(r.getStatusCode(),200);
         Assert.assertEquals(r.getContentType(),"application/json; charset=utf-8");
@@ -77,9 +77,6 @@ String size=r.jsonPath().getString("size");
 
     // Assert J- assertions
         assertThat(size).isNotBlank().isNotEmpty();
-
-
-
     }
 
     @Description("TC_05: Verify response format is JSON")

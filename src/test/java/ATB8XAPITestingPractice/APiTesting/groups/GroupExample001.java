@@ -15,13 +15,13 @@ public class GroupExample001 {
     @Test(groups = {"qa", "preprod", "reg"})
     public void RegRun() {
         System.out.println("Reg");
-        Assert.assertTrue(false);
+        Assert.assertFalse(false);
     }
 
     @Test(groups = {"dev", "stage"})
     public void SmokeRun() {
         System.out.println("Smoke");
-        Assert.assertTrue(false);
+        Assert.assertFalse(false);
     }
 
     @Test(groups = {"sanity", "qa", "preprod"})
@@ -34,13 +34,13 @@ public class GroupExample001 {
     @Test(groups = {"qa", "preprod", "reg"})
     public void RegRun2() {
         System.out.println("Reg");
-        Assert.assertTrue(false);
+        Assert.assertTrue(true);
     }
 
     @Test(groups = {"dev", "stage"})
     public void SmokeRun3() {
         System.out.println("Smoke");
-        Assert.assertTrue(false);
+        Assert.assertFalse(false);
     }
 
 

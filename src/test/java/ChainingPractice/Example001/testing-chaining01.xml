@@ -3,23 +3,23 @@
 <suite name="Suite">
     <test name="Test1">
         <classes>
-            <class name="ChainingPractice.CreateProductExample"/>
+            <class name="ChainingPractice.Example001.CreateProductExample"/>
         </classes>
     </test>
     <test  name="Test2">
         <classes>
-            <class name="ChainingPractice.UpdateProductExample"/>
+            <class name="ChainingPractice.Example001.UpdateProductExample"/>
 
         </classes>
     </test>
     <test  name="Test3">
         <classes>
-            <class name="ChainingPractice.GetProductxample" />
+            <class name="ChainingPractice.Example001.GetProductxample" />
         </classes>
     </test>
     <test name="Test4">
         <classes>
-            <class name="ChainingPractice.DeleteProductExample"/>
+            <class name="ChainingPractice.Example001.DeleteProductExample"/>
         </classes>
     </test>
 </suite>

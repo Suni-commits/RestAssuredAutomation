@@ -13,14 +13,15 @@ public class GetProductxample {
     ValidatableResponse vr;
 
     @Test
-    void test_createProduct(ITestContext context){
-    String id= (String) context.getSuite().getAttribute("product_id");
+    void test_getProduct(ITestContext context){
+        String id = (String)context.getSuite().getAttribute("product_id");
 
-        rs= RestAssured.given();
+        rs = RestAssured.given();
         rs.contentType("application/json");
-        rs.pathParam("id",id);
-        r= rs.when().get("https://api.escuelajs.co/api/v1/products/{id}");
-        vr= r.then().statusCode(200).log().all();
+        rs.pathParam("id", id);
+        r = rs.when().get("https://api.escuelajs.co/api/v1/products/{id}",id);
+        vr = r.then().statusCode(200).log().all();
     }
+
 
 }

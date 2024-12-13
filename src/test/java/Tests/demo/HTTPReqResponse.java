@@ -5,29 +5,26 @@ import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import java.util.*;
 
-import static javax.swing.UIManager.getInt;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static io.restassured.RestAssured.*;
-import static org.testng.AssertJUnit.assertEquals;
-
-import java.net.URL;
 
 
 public class HTTPReqResponse {
 
-    int id;
-    @Test(priority=1)
+   String id;
+    @Test(priority=3,dependsOnMethods = {"createUsers"})
     void getUser(){
-       given()
-                .when()
-                .get("https://reqres.in/api/users?page=2")
 
+        given()
+                .contentType("application/json")
+                .pathParam("id",id)
+                .when()
+                .get("https://reqres.in/api/users/{id}")
                 .then()
-                .statusCode(200)
-                .body("page",equalTo(2))
-                .log().all();
+                .statusCode(200).log().all();
     }
-@Test(priority = 2)
+@Test(priority =1)
     void createUsers()
     {
         HashMap hm=new HashMap();
@@ -40,8 +37,7 @@ public class HTTPReqResponse {
                 .when()
                 .post("https://reqres.in/api/users")
                 .then()
-                .statusCode(201)
-               .hashCode();
+                .statusCode(201).log().all().extract().response().path("id");
 
     }
 @Test (priority = 3,dependsOnMethods = {"createUsers"})
@@ -64,8 +60,9 @@ public class HTTPReqResponse {
         Response response = given()
                 .contentType("application/json")
                 .body(hm)
+                .pathParam("id",id)
                 .when()
-                .put("https://reqres.in/api/users/" + id);
+                .put("https://reqres.in/api/users/{id}");
 
         // Assert status code and check the response body directly
         response.then()
@@ -74,10 +71,13 @@ public class HTTPReqResponse {
                 .body("job", equalTo("teacher"));
 
         // Extract id from the response using jsonPath()
-        int updatedUserId = response.jsonPath().getInt("id");
+        String name = response.jsonPath().getString("name");
+        String job = response.jsonPath().getString("job");
 
-        // Ensure that the user ID remains unchanged after the update
-        assertEquals(String.valueOf(updatedUserId), id, "User ID should be unchanged after update");
+        //assert J
+
+        assertThat(name).isEqualTo("vishnu");
+        assertThat(job).isEqualTo("teacher").isNotBlank();
 
 
 

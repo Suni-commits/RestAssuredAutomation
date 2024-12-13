@@ -12,15 +12,15 @@ public class DeleteProductExample {
     RequestSpecification rs;
     Response r;
     ValidatableResponse vr;
-@Test
+    @Test
     void test_deleteproduct(ITestContext context){
-        String id= (String) context.getSuite().getAttribute("product_id");
+        String id = (String)context.getSuite().getAttribute("product_id");
 
         rs = RestAssured.given();
         rs.contentType("application/json");
-        rs.pathParam("id",id);
+        rs.pathParam("id", id);
         r = rs.when().delete("https://api.escuelajs.co/api/v1/products/{id}");
         vr = r.then().statusCode(200);
-
     }
+
 }

@@ -3,10 +3,10 @@
 <suite name="Suite">
     <test name="Test">
         <classes>
-            <class name="ChainingPractice.CreateProductExample"/>
-            <class name="ChainingPractice.GetProductxample" />
-            <class name="ChainingPractice.UpdateProductExample"/>
-            <class name="ChainingPractice.DeleteProductExample"/>
+            <class name="ChainingPractice.Example001.CreateProductExample"/>
+            <class name="ChainingPractice.Example001.GetProductxample" />
+            <class name="ChainingPractice.Example001.UpdateProductExample"/>
+            <class name="ChainingPractice.Example001.DeleteProductExample"/>
         </classes>
     </test>
 </suite>
